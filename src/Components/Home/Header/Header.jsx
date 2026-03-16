@@ -1,5 +1,4 @@
 import styles from "./Header.module.css";
-import { ShoppingCart, ShoppingBag, ToggleLeft } from "lucide-react";
 import search from "../../../assets/search.svg";
 import cart from "../../../assets/shopping-cart.svg";
 import bag from "../../../assets/shopping-bag.svg";
