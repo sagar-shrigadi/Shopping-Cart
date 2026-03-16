@@ -1,0 +1,65 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  padding: clamp(0rem, -0.3478rem + 1.7391vw, 1rem);
+}
+
+.logo {
+  background: none;
+  border: 1px solid;
+  font-size: clamp(0.875rem, 0.5707rem + 1.5217vw, 1.75rem);
+  padding: clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem)
+    clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
+  cursor: pointer;
+}
+
+.input {
+  margin-inline: auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+  > input {
+    min-width: clamp(6.25rem, -5.4891rem + 58.6957vw, 40rem);
+    padding: clamp(0.5rem, 0.2391rem + 1.3043vw, 1.25rem)
+      clamp(0.5rem, 0.413rem + 0.4348vw, 0.75rem);
+    border: 1px solid;
+    border-radius: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+    font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+  }
+  > .searchBtn {
+    position: absolute;
+    right: 10px;
+    block-size: auto;
+    background: none;
+    border: 0;
+    cursor: pointer;
+    padding: 0.5rem 0;
+    > img {
+      width: clamp(1.125rem, 0.9076rem + 1.087vw, 1.75rem);
+      aspect-ratio: 1;
+    }
+  }
+}
+.nav {
+  > ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    border: 1px solid;
+    padding: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem)
+      clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
+    gap: clamp(0.625rem, 0.1467rem + 2.3913vw, 2rem);
+
+    > li {
+      cursor: pointer;
+      > img {
+        min-width: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
+      }
+    }
+  }
+}
