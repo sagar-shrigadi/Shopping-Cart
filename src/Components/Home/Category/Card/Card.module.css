@@ -1,0 +1,13 @@
+.card {
+  composes: btn from "../../Hero/Hero.module.css";
+  text-decoration: none;
+  color: inherit;
+  background: white;
+  text-transform: capitalize;
+  min-height: 500px;
+  background-color: cadetblue;
+  border-radius: 2rem;
+  font-size: 48px;
+  display: grid;
+  place-items: center;
+}
