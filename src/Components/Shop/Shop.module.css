@@ -1,0 +1,54 @@
+.shop {
+  margin-inline: auto;
+  max-width: 80%;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  gap: 2rem;
+  padding: 2.5rem 1rem;
+  color: black;
+}
+
+.main {
+  padding-inline: 1.5rem;
+  margin-bottom: 1rem;
+  h2 {
+    font-size: 2.5rem;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.25rem;
+  }
+  p {
+    font-size: 1.25rem;
+    letter-spacing: 0.5ch;
+  }
+}
+.controls {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-inline: 1rem;
+}
+.btn {
+  composes: btn from "../BackBtn/BackBtn.module.css";
+  background: lch(from lch(100% 0 0) 85% c h);
+  border-radius: 0.5rem;
+}
+
+.content {
+  padding: 3rem;
+  margin-inline: auto;
+  margin-bottom: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  gap: 2rem;
+  justify-content: center;
+
+  .card {
+    min-height: 25rem;
+    border: 1px solid;
+  }
+}
