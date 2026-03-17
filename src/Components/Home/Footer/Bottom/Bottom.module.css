@@ -1,0 +1,30 @@
+.bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-block: 2.5rem;
+}
+
+.copy {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem 2rem;
+
+  a {
+    font-size: 1.125rem;
+    padding-right: 0.5rem;
+  }
+  a:not(:last-child) {
+    border-right: 1px solid;
+  }
+}

@@ -1,0 +1,18 @@
+.top {
+  --max-width: 980px;
+  width: min(var(--max-width), 100%);
+  min-height: 250px;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: lch(from lch(0% 0 0) 20% c h);
+  margin-inline: auto;
+
+  div {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    font-size: 1.125rem;
+  }
+}

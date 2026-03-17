@@ -1,0 +1,9 @@
+.footer {
+  --overlap-size: 250px;
+  background-image: linear-gradient(
+    to top,
+    black var(--overlap-size),
+    white var(--overlap-size)
+  );
+  color: white;
+}
