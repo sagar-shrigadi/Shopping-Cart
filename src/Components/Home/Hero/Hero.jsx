@@ -1,4 +1,5 @@
 import styles from "./Hero.module.css";
+import { LinkBtn } from "../../LinkBtn/LinkBtn";
 export function Hero() {
   return (
     <section className={styles.hero}>
@@ -8,9 +9,7 @@ export function Hero() {
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab sequi
           accusantium, pariatur quidem consequatur reprehenderit at molestias!
         </p>
-        <button type="button" className={styles.btn}>
-          Shop Now
-        </button>
+        <LinkBtn to="shop">Shop Now</LinkBtn>
       </div>
     </section>
   );

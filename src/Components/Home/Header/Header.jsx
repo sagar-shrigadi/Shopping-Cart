@@ -2,6 +2,7 @@ import styles from "./Header.module.css";
 import search from "../../../assets/search.svg";
 import cart from "../../../assets/shopping-cart.svg";
 import bag from "../../../assets/shopping-bag.svg";
+import { NavLink } from "react-router";
 
 export function Header() {
   return (
@@ -21,12 +22,12 @@ export function Header() {
       </div>
       <nav className={styles.nav}>
         <ul>
-          <li title="Shop">
+          <NavLink to="shop">
             <img src={bag} alt="Shop" />
-          </li>
-          <li title="Cart">
+          </NavLink>
+          <NavLink to="cart">
             <img src={cart} alt="Cart" />
-          </li>
+          </NavLink>
         </ul>
       </nav>
     </header>
