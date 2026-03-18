@@ -1,0 +1,33 @@
+@import url("https://fonts.googleapis.com/css2?family=Rethink+Sans:ital,wght@0,400..800;1,400..800&display=swap");
+
+.section {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #c8273e;
+  color: black;
+  font-family: "Rethink Sans", sans-serif;
+
+  h2 {
+    font-size: 192px;
+    /* border: 1px solid; */
+  }
+  h3 {
+    font-size: 3rem;
+    margin-block: 0.5rem;
+  }
+  p {
+    font-size: 2rem;
+    max-width: 35ch;
+    text-align: center;
+    margin-block: 0.5rem 1rem;
+  }
+}
+
+.btn {
+  composes: btn from "../LinkBtn/LinkBtn.module.css";
+  background: #000;
+  color: #fff;
+}
