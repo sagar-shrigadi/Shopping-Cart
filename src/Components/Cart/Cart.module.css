@@ -1,0 +1,48 @@
+.cart {
+  composes: shop from "../Shop/Shop.module.css";
+}
+
+.header {
+  composes: header from "../Shop/Shop.module.css";
+}
+
+.main {
+  composes: main from "../Shop/Shop.module.css";
+}
+
+.content {
+  margin-inline: auto;
+  max-width: 95%;
+  min-height: 450px;
+  /* border: 1px solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 5rem;
+  border-radius: 1rem;
+  background-color: lch(from lch(0% 0 0) 25% c h);
+
+  .svg {
+    background-color: lch(from lch(0% 0 0) 55% c h);
+    padding: 1.75rem;
+    border-radius: 50%;
+    svg {
+      stroke: lch(from lch(0% 0 0) 15% c h);
+    }
+  }
+
+  h3 {
+    margin-top: 0.5rem;
+    font-size: 2rem;
+    color: whitesmoke;
+  }
+  p {
+    font-size: 1.25rem;
+    max-width: 40ch;
+    text-align: center;
+    margin-bottom: 0.75rem;
+    color: lch(from lch(100% 0 0) 80% c h);
+  }
+}
