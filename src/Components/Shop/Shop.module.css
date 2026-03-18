@@ -2,6 +2,18 @@
   margin-inline: auto;
   max-width: 80%;
 }
+
+.otherStates {
+  composes: shop;
+  min-height: 44.55dvh;
+  display: grid;
+  place-items: center;
+  text-align: center;
+
+  h2 {
+    font-size: 36px;
+  }
+}
 .header {
   display: flex;
   flex-direction: column;
@@ -43,12 +55,66 @@
   margin-inline: auto;
   margin-bottom: 5rem;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(325px, 100%), 1fr));
   gap: 2rem;
   justify-content: center;
 
   .card {
     min-height: 25rem;
-    border: 1px solid;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background-color: lch(from lch(12.25% 0 296.81) 25% c h);
+    color: whitesmoke;
+    border-radius: 1.125rem;
+
+    img {
+      aspect-ratio: 1;
+      object-fit: contain;
+      width: 100%;
+      background-position: center;
+    }
+
+    .productInfo {
+      align-self: stretch;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin: 15px 20px;
+
+      .cartPrice {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        button,
+        p {
+          font-size: 1.125rem;
+          color: lch(from lch(1000% 0 0) 85% c h);
+        }
+
+        button {
+          font-weight: 550;
+          padding-block: 0.35rem;
+          cursor: pointer;
+          background: transparent;
+          border: 0;
+          transition: 0.3s;
+        }
+
+        button:hover,
+        button:focus-visible {
+          color: aquamarine;
+        }
+      }
+
+      h3 {
+        text-align: start;
+        font-size: 1.25rem;
+      }
+    }
   }
 }

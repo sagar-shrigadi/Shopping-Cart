@@ -1,6 +1,45 @@
+import { useEffect, useState } from "react";
 import { BackBtn } from "../BackBtn/BackBtn";
 import styles from "./Shop.module.css";
 export function Shop() {
+  const [produts, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      try {
+        const response = await fetch("https://fakestoreapi.com/products");
+
+        if (response.status >= 400) {
+          throw Error(`Error: ${response.status}`);
+        }
+        const json = await response.json();
+        setProducts(json);
+      } catch (error) {
+        setError(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchProducts();
+  }, []);
+
+  if (loading)
+    return (
+      <section className={styles.otherStates}>
+        <h2>Loading...</h2>
+      </section>
+    );
+  if (error)
+    return (
+      <section className={styles.otherStates}>
+        <h2>
+          Oops! Some Error occured while fetching! <br />
+          Please Restart the Page!
+        </h2>
+      </section>
+    );
   return (
     <section className={styles.shop}>
       <article className={styles.header}>
@@ -48,16 +87,19 @@ export function Shop() {
       </article>
 
       <article className={styles.content}>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
-        <div className={styles.card}></div>
+        {produts.map((product) => (
+          <div className={styles.card} key={product.id}>
+            <img src={product.image} alt={product.title} />
+
+            <div className={styles.productInfo}>
+              <div className={styles.cartPrice}>
+                <button>Add To Cart</button>
+                <p>{product.price} $</p>
+              </div>
+              <h3>{product.title}</h3>
+            </div>
+          </div>
+        ))}
       </article>
     </section>
   );
