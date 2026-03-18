@@ -22,10 +22,10 @@ export function Header() {
       </div>
       <nav className={styles.nav}>
         <ul>
-          <NavLink to="shop">
+          <NavLink to="shop" data-testId="toShop">
             <img src={bag} alt="Shop" />
           </NavLink>
-          <NavLink to="cart">
+          <NavLink to="cart" data-testId="toCart">
             <img src={cart} alt="Cart" />
           </NavLink>
         </ul>

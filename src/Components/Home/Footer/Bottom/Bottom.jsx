@@ -22,7 +22,7 @@ export function Bottom() {
         <p>Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
       </div>
 
-      <div className={styles.links}>
+      <div className={styles.links} data-testid="bottomFooterLinksContainer">
         <a href="#">Privacy Policy</a>
         <a href="#">Terms of Use</a>
         <a href="#">Terms and Conditions</a>
