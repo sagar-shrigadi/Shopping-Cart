@@ -8,13 +8,21 @@
 
 .main {
   composes: main from "../Shop/Shop.module.css";
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  strong > p {
+    letter-spacing: 0.25ch;
+    text-transform: uppercase;
+  }
 }
 
 .content {
   margin-inline: auto;
   max-width: 95%;
   min-height: 450px;
-  /* border: 1px solid; */
   display: flex;
   flex-direction: column;
   align-items: center;

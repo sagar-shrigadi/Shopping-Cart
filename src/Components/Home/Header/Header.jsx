@@ -4,7 +4,7 @@ import cart from "../../../assets/shopping-cart.svg";
 import bag from "../../../assets/shopping-bag.svg";
 import { NavLink } from "react-router";
 
-export function Header() {
+export function Header({ count }) {
   return (
     <header className={styles.header}>
       <button className={styles.logo}>Lorem Ipsum</button>
@@ -25,7 +25,11 @@ export function Header() {
           <NavLink to="shop" data-testId="toShop">
             <img src={bag} alt="Shop" />
           </NavLink>
-          <NavLink to="cart" data-testId="toCart">
+          <NavLink
+            to="cart"
+            data-testId="toCart"
+            className={count > 0 ? styles.cart : ""}
+          >
             <img src={cart} alt="Cart" />
           </NavLink>
         </ul>

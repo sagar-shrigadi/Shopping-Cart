@@ -29,6 +29,13 @@ export function Cart() {
         <BackBtn />
         <div className={styles.main}>
           <h2>Your Cart</h2>
+          {itemsToCart.length > 0 ? (
+            <strong>
+              <p>{itemsToCart.length} items</p>
+            </strong>
+          ) : (
+            ""
+          )}
         </div>
       </article>
       {itemsToCart.length === 0 ? (

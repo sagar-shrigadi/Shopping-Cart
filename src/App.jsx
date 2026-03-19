@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <main>
-        <Header />
+        <Header count={itemsToCart.length} />
         <Outlet context={{ itemsToCart, setItemsToCart }} />
       </main>
       <Footer />

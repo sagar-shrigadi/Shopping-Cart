@@ -63,3 +63,18 @@
     }
   }
 }
+
+.cart {
+  position: relative;
+}
+
+.cart::before {
+  content: "";
+  position: absolute;
+  background: red;
+  border-radius: 50%;
+  top: -15%;
+  right: -25%;
+  width: 15px;
+  aspect-ratio: 1;
+}
