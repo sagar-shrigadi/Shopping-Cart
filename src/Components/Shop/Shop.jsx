@@ -1,10 +1,16 @@
 import { useEffect, useState } from "react";
 import { BackBtn } from "../BackBtn/BackBtn";
 import styles from "./Shop.module.css";
+import { useOutletContext } from "react-router";
 export function Shop() {
+  const { itemsToCart, setItemsToCart } = useOutletContext();
   const [produts, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  const addToCart = (product) => {
+    setItemsToCart([...itemsToCart, { ...product, qty: 1 }]);
+  };
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -93,7 +99,7 @@ export function Shop() {
 
             <div className={styles.productInfo}>
               <div className={styles.cartPrice}>
-                <button>Add To Cart</button>
+                <button onClick={() => addToCart(product)}>Add To Cart</button>
                 <p>{product.price} $</p>
               </div>
               <h3>{product.title}</h3>

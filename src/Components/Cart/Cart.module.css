@@ -46,3 +46,70 @@
     color: lch(from lch(100% 0 0) 80% c h);
   }
 }
+
+.products {
+  margin-inline: auto;
+  max-width: 95%;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 5rem;
+}
+.product {
+  background-color: lch(from lch(0% 0 0) 25% c h);
+  display: flex;
+  gap: 3rem;
+  padding: 2rem 3.5rem;
+  border: 0;
+  border-radius: 0.5rem;
+  color: aliceblue;
+
+  img {
+    aspect-ratio: 1;
+    width: 200px;
+  }
+
+  .productInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-inline: 2rem;
+    flex-grow: 1;
+
+    .titlePrice {
+      display: flex;
+      justify-content: space-between;
+
+      h3,
+      p {
+        font-size: 1.5rem;
+      }
+      h3 {
+        max-width: 40ch;
+      }
+    }
+
+    .qtyControls {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      input[type="tel"],
+      button {
+        padding: 0.5rem 1rem;
+        border: 0;
+        border-radius: 5px;
+        font-size: 1.125rem;
+        color: black;
+      }
+      input[type="tel"] {
+        width: 70px;
+        text-align: center;
+        background-color: #f0f0f0;
+      }
+      button {
+        cursor: pointer;
+      }
+    }
+  }
+}

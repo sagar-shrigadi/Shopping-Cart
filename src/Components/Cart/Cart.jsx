@@ -1,8 +1,28 @@
 import styles from "./Cart.module.css";
 import { BackBtn } from "../BackBtn/BackBtn";
 import { LinkBtn } from "../LinkBtn/LinkBtn";
+import { useOutletContext } from "react-router";
 
 export function Cart() {
+  const { itemsToCart, setItemsToCart } = useOutletContext();
+
+  const increaseItemQty = (id) => {
+    setItemsToCart(
+      itemsToCart.map((item) =>
+        item.id === id ? { ...item, qty: item.qty + 1 } : item,
+      ),
+    );
+  };
+
+  const decreaseItemQty = (id) => {
+    setItemsToCart(
+      itemsToCart.map((item) =>
+        item.id === id
+          ? { ...item, qty: item.qty > 1 ? item.qty - 1 : 1 }
+          : item,
+      ),
+    );
+  };
   return (
     <section className={styles.cart}>
       <article className={styles.header}>
@@ -11,29 +31,52 @@ export function Cart() {
           <h2>Your Cart</h2>
         </div>
       </article>
-      <article className={styles.content}>
-        <div className={styles.svg}>
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="40"
-            height="40"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
-          >
-            <circle cx="8" cy="21" r="1" />
-            <circle cx="19" cy="21" r="1" />
-            <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
-          </svg>
-        </div>
-        <h3>Your cart is empty</h3>
-        <p>Start adding Products to your cart and they will appear here.</p>
-        <LinkBtn to="/shop">Shop Now</LinkBtn>
-      </article>
+      {itemsToCart.length === 0 ? (
+        <article className={styles.content}>
+          <div className={styles.svg}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="40"
+              height="40"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+            >
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
+          </div>
+          <h3>Your cart is empty</h3>
+          <p>Start adding Products to your cart and they will appear here.</p>
+          <LinkBtn to="/shop">Shop Now</LinkBtn>
+        </article>
+      ) : (
+        <article className={styles.products}>
+          {itemsToCart.map((item) => (
+            <div key={item.id} className={styles.product}>
+              <img src={item.image} alt={item.title} />
+              <div className={styles.productInfo}>
+                <div className={styles.titlePrice}>
+                  <h3>{item.title}</h3>
+                  <strong>
+                    <p>{item.price} $</p>
+                  </strong>
+                </div>
+                <div className={styles.qtyControls}>
+                  <input type="tel" name="qty" id="qty" value={item.qty} />
+                  <button onClick={() => increaseItemQty(item.id)}>+</button>
+                  <button onClick={() => decreaseItemQty(item.id)}>-</button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </article>
+      )}
     </section>
   );
 }
