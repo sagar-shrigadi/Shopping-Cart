@@ -7,7 +7,9 @@ import { NavLink } from "react-router";
 export function Header({ count }) {
   return (
     <header className={styles.header}>
-      <button className={styles.logo}>Lorem Ipsum</button>
+      <NavLink to="/" className={styles.logo}>
+        Lorem Ipsum
+      </NavLink>
 
       <div className={styles.input}>
         <input

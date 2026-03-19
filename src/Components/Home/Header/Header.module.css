@@ -7,8 +7,9 @@
 }
 
 .logo {
+  text-decoration: none;
+  color: inherit;
   background: none;
-  border: 1px solid;
   font-size: clamp(0.875rem, 0.5707rem + 1.5217vw, 1.75rem);
   padding: clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem)
     clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
@@ -75,6 +76,6 @@
   border-radius: 50%;
   top: -15%;
   right: -25%;
-  width: 15px;
+  width: 10px;
   aspect-ratio: 1;
 }

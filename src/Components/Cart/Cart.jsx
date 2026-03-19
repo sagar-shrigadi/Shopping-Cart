@@ -23,6 +23,11 @@ export function Cart() {
       ),
     );
   };
+
+  const removeFromCart = (id) => {
+    setItemsToCart(itemsToCart.filter((item) => item.id !== id));
+  };
+
   return (
     <section className={styles.cart}>
       <article className={styles.header}>
@@ -39,7 +44,7 @@ export function Cart() {
         </div>
       </article>
       {itemsToCart.length === 0 ? (
-        <article className={styles.content}>
+        <section className={styles.content}>
           <div className={styles.svg}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,28 +66,34 @@ export function Cart() {
           <h3>Your cart is empty</h3>
           <p>Start adding Products to your cart and they will appear here.</p>
           <LinkBtn to="/shop">Shop Now</LinkBtn>
-        </article>
+        </section>
       ) : (
-        <article className={styles.products}>
+        <section className={styles.products}>
           {itemsToCart.map((item) => (
-            <div key={item.id} className={styles.product}>
+            <article key={item.id} className={styles.product}>
               <img src={item.image} alt={item.title} />
               <div className={styles.productInfo}>
                 <div className={styles.titlePrice}>
                   <h3>{item.title}</h3>
                   <strong>
-                    <p>{item.price} $</p>
+                    <p>{item.price * item.qty} $</p>
                   </strong>
                 </div>
                 <div className={styles.qtyControls}>
                   <input type="tel" name="qty" id="qty" value={item.qty} />
                   <button onClick={() => increaseItemQty(item.id)}>+</button>
                   <button onClick={() => decreaseItemQty(item.id)}>-</button>
+                  <button
+                    className={styles.remove}
+                    onClick={() => removeFromCart(item.id)}
+                  >
+                    Remove
+                  </button>
                 </div>
               </div>
-            </div>
+            </article>
           ))}
-        </article>
+        </section>
       )}
     </section>
   );
