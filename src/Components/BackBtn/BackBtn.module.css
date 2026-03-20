@@ -13,4 +13,10 @@
 .back {
   composes: btn;
   background-color: transparent;
+
+  @media (prefers-color-scheme: dark) {
+    svg {
+      stroke: whitesmoke;
+    }
+  }
 }
