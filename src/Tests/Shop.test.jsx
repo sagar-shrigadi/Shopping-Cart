@@ -11,20 +11,19 @@ import { Shop } from "../Components/Shop/Shop";
 const router = createMemoryRouter(Routes, { initialEntries: ["/shop"] });
 
 // mocking fetch function to avoid sending an actual http request while testing
+const product = [
+  {
+    id: 6,
+    title: "Solid Gold Petite Micropave",
+    price: 168,
+  },
+  {
+    id: 7,
+    title: "Mens Cotton Jacket",
+    price: 55.99,
+  },
+];
 window.fetch = vi.fn(() => {
-  const product = [
-    {
-      id: 6,
-      title: "Solid Gold Petite Micropave",
-      price: 168,
-    },
-    {
-      id: 7,
-      title: "Mens Cotton Jacket",
-      price: 55.99,
-    },
-  ];
-
   return Promise.resolve({
     json: () => Promise.resolve(product),
   });
@@ -62,20 +61,31 @@ describe("Isolated Shop test", () => {
   it("shop page correctly loads with fetched data using outlet context", async () => {
     await loadShopAndWaitForLoadingToBeOver();
 
-    const backBtn = screen.getByText("Back");
+    // back button
+    const backBtn = screen.getByTestId("backBtn");
+    expect(backBtn).toBeInTheDocument();
+
+    // heading for shop page
     const shopHeading = screen.getByRole("heading", { name: "Shop Products" });
+    expect(shopHeading).toBeInTheDocument();
+
+    // shop complementary text
     const shopDesc = screen.getByText("Browse our Curated Collections");
+    expect(shopDesc).toBeInTheDocument();
+
+    // filter button
     const filterBtn = screen.getByText("Filter");
+    expect(filterBtn).toBeInTheDocument();
+
+    // sort button
     const sortBtn = screen.getByText("Sort");
+    expect(sortBtn).toBeInTheDocument();
+
+    // product cards container
     const productContainer = screen.getByTestId("productContainer");
     const products = screen.getAllByTestId("products");
 
-    expect(backBtn).toBeInTheDocument();
-    expect(shopHeading).toBeInTheDocument();
-    expect(shopDesc).toBeInTheDocument();
-    expect(filterBtn).toBeInTheDocument();
-    expect(sortBtn).toBeInTheDocument();
-    expect(products.length).toBe(2);
+    expect(products.length).toBe(product.length);
     expect(productContainer).toContainElement(products[0]);
     expect(productContainer).toContainElement(products[1]);
     // screen.debug();
@@ -87,23 +97,23 @@ describe("Isolated Shop test", () => {
     const product1Title = screen.getByRole("heading", {
       name: "Solid Gold Petite Micropave",
     });
+    expect(product1Title).toBeInTheDocument();
+
     const product1Price = screen.getByText("168 $");
+    expect(product1Price).toBeInTheDocument();
 
     // product 2
     const product2Title = screen.getByRole("heading", {
       name: "Mens Cotton Jacket",
     });
+    expect(product2Title).toBeInTheDocument();
+
     const product2Price = screen.getByText("55.99 $");
+    expect(product2Price).toBeInTheDocument();
 
     const addToCartBtns = screen.getAllByRole("button", {
       name: "Add To Cart",
     });
-
-    expect(product1Title).toBeInTheDocument();
-    expect(product1Price).toBeInTheDocument();
-    expect(product2Title).toBeInTheDocument();
-    expect(product2Price).toBeInTheDocument();
-    expect(addToCartBtns[0]).toBeInTheDocument();
-    expect(addToCartBtns[1]).toBeInTheDocument();
+    addToCartBtns.forEach((btn) => expect(btn).toBeInTheDocument());
   });
 });
