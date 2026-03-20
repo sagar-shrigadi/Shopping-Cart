@@ -92,9 +92,9 @@ export function Shop() {
         </div>
       </article>
 
-      <article className={styles.content}>
+      <article className={styles.content} data-testid="productContainer">
         {produts.map((product) => (
-          <div className={styles.card} key={product.id}>
+          <div className={styles.card} key={product.id} data-testid="products">
             <img src={product.image} alt={product.title} />
 
             <div className={styles.productInfo}>
