@@ -8,7 +8,12 @@ export function BackBtn() {
     navigate(-1);
   };
   return (
-    <button type="button" className={styles.back} onClick={backBtn}>
+    <button
+      type="button"
+      className={styles.back}
+      onClick={backBtn}
+      data-testid="backBtn"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
         width="28"

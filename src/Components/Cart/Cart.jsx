@@ -68,19 +68,34 @@ export function Cart() {
           <LinkBtn to="/shop">Shop Now</LinkBtn>
         </section>
       ) : (
-        <section className={styles.products}>
+        <section
+          className={styles.products}
+          data-testid="productsInCartContainer"
+        >
           {itemsToCart.map((item) => (
-            <article key={item.id} className={styles.product}>
+            <article
+              key={item.id}
+              className={styles.product}
+              data-testId="productsInCart"
+            >
               <img src={item.image} alt={item.title} />
               <div className={styles.productInfo}>
                 <div className={styles.titlePrice}>
-                  <h3>{item.title}</h3>
+                  <h3 data-testid="productInCartTitle">{item.title}</h3>
                   <strong>
-                    <p>{item.price * item.qty} $</p>
+                    <p data-testid="productInCartPrice">
+                      {item.price * item.qty} $
+                    </p>
                   </strong>
                 </div>
                 <div className={styles.qtyControls}>
-                  <input type="tel" name="qty" id="qty" value={item.qty} />
+                  <input
+                    type="tel"
+                    name="qty"
+                    id="qty"
+                    value={item.qty}
+                    data-testid="qtyInput"
+                  />
                   <button onClick={() => increaseItemQty(item.id)}>+</button>
                   <button onClick={() => decreaseItemQty(item.id)}>-</button>
                   <button
