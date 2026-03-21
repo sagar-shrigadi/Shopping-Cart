@@ -39,6 +39,7 @@
     border-radius: 50%;
     svg {
       stroke: oklch(from var(--bg) 15% c h);
+      width: 40px;
     }
   }
 

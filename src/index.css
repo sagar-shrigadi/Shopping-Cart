@@ -3,7 +3,8 @@
   --text-h: #08060d;
   --bg: #fff;
   --bg15L: oklch(from var(--bg) 15% c h);
-  --bg25L: oklch(from var(--bg) 25% c h);
+  --bg25L: oklch(from var(--bg) 40% c h);
+  --svg: var(--bg25L);
   --border: #e5e4e7;
   --code-bg: #f4f3ec;
   --accent: #aa3bff;
@@ -39,6 +40,7 @@
     --bg: #16171d;
     --bg15L: oklch(from var(--bg) 15% c h);
     --bg25L: oklch(from var(--bg) 25% c h);
+    --svg: var(--text-h);
     --border: #2e303a;
     --code-bg: #1f2028;
     --accent: #c084fc;

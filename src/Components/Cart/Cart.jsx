@@ -48,15 +48,12 @@ export function Cart() {
           <div className={styles.svg}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="40"
-              height="40"
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-shopping-cart-icon lucide-shopping-cart"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             >
               <circle cx="8" cy="21" r="1" />
               <circle cx="19" cy="21" r="1" />

@@ -12,6 +12,10 @@
   justify-content: center;
   gap: 0.5rem;
   font-size: 1.25rem;
+
+  svg {
+    width: 24px;
+  }
 }
 
 .links {
