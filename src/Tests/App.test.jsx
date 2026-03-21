@@ -20,16 +20,12 @@ describe("App.jsx-Header", () => {
     render(<RouterProvider router={router} />);
 
     const toShopLink = screen.getByTestId("toShop");
-    const toCartLink = screen.getByTestId("toCart");
-
-    const toShopImg = screen.getByAltText("Shop");
-    const toCartImg = screen.getByAltText("Cart");
-
+    expect(toShopLink).toBeInTheDocument();
     expect(toShopLink).toHaveAttribute("href", "/shop");
-    expect(toCartLink).toHaveAttribute("href", "/cart");
 
-    expect(toShopImg).toBeInTheDocument();
-    expect(toCartImg).toBeInTheDocument();
+    const toCartLink = screen.getByTestId("toCart");
+    expect(toCartLink).toBeInTheDocument();
+    expect(toCartLink).toHaveAttribute("href", "/cart");
   });
 });
 

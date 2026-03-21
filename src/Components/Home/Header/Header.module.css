@@ -2,17 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid;
-  padding: clamp(0rem, -0.3478rem + 1.7391vw, 1rem);
+  /* border: 1px solid; */
+  padding: 1rem 2rem;
 }
 
 .logo {
   text-decoration: none;
-  color: inherit;
+  color: var(--text-h);
   background: none;
-  font-size: clamp(0.875rem, 0.5707rem + 1.5217vw, 1.75rem);
-  padding: clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem)
-    clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
+  font-size: 1.75rem;
   cursor: pointer;
 }
 
@@ -21,26 +19,35 @@
   position: relative;
   display: flex;
   align-items: center;
-  gap: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
+  gap: 1rem;
+  min-width: 40rem;
+  background-color: var(--bg25L);
+  border-radius: 0.875rem;
   > input {
-    min-width: clamp(6.25rem, -5.4891rem + 58.6957vw, 40rem);
-    padding: clamp(0.5rem, 0.2391rem + 1.3043vw, 1.25rem)
-      clamp(0.5rem, 0.413rem + 0.4348vw, 0.75rem);
-    border: 1px solid;
-    border-radius: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
-    font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
+    border-radius: inherit;
+    background-color: inherit;
+    min-width: 93.5%;
+    padding: 1.125rem 1rem;
+    border: 0;
+    font-size: 1.125rem;
+    color: aliceblue;
+  }
+  > input:focus-visible {
+    outline: 0;
   }
   > .searchBtn {
+    --svg: aliceblue;
     position: absolute;
-    right: 10px;
+    right: 1rem;
     block-size: auto;
     background: none;
     border: 0;
     cursor: pointer;
     padding: 0.5rem 0;
-    > img {
-      width: clamp(1.125rem, 0.9076rem + 1.087vw, 1.75rem);
+    > svg {
+      width: 1.75rem;
       aspect-ratio: 1;
+      stroke: var(--svg);
     }
   }
 }
@@ -51,16 +58,14 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    border: 1px solid;
-    padding: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem)
-      clamp(0.75rem, 0.3152rem + 2.1739vw, 2rem);
-    gap: clamp(0.625rem, 0.1467rem + 2.3913vw, 2rem);
-
-    > li {
+    /* border: 1px solid; */
+    gap: 2rem;
+    > a {
       cursor: pointer;
-      > img {
-        min-width: clamp(1.125rem, 0.8641rem + 1.3043vw, 1.875rem);
-      }
+    }
+    svg {
+      width: 2rem;
+      stroke: var(--svg);
     }
   }
 }
@@ -74,8 +79,8 @@
   position: absolute;
   background: red;
   border-radius: 50%;
-  top: -15%;
-  right: -25%;
-  width: 10px;
+  top: 2%;
+  right: -15%;
+  width: 12px;
   aspect-ratio: 1;
 }
