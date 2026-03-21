@@ -6,7 +6,8 @@
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: lch(from lch(0% 0 0) 20% c h);
+  /* background-color: lch(from lch(0% 0 0) 20% c h); */
+  background-color: var(--bg25L);
   margin-inline: auto;
 
   div {
