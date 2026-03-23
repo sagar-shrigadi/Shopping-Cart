@@ -51,16 +51,21 @@
   /* padding-inline: 1rem; */
 }
 .btn {
-  --text: black;
   composes: btn from "../BackBtn/BackBtn.module.css";
+  --text: black;
   background-color: #f0f0f0;
   color: var(--text);
   border-radius: 0.5rem;
+  transition: background-color 150ms;
 
   svg {
     margin-right: 0.25rem;
     width: 28px;
   }
+}
+
+.btn:hover {
+  background-color: var(--action);
 }
 
 .content {
@@ -118,12 +123,12 @@
           cursor: pointer;
           background: transparent;
           border: 0;
-          transition: 0.3s;
+          transition: color 200ms;
         }
 
         button:hover,
         button:focus-visible {
-          color: aquamarine;
+          color: var(--action);
         }
       }
 

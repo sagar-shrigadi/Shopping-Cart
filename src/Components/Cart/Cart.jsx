@@ -1,7 +1,6 @@
 import styles from "./Cart.module.css";
 import { BackBtn } from "../BackBtn/BackBtn";
-import { LinkBtn } from "../LinkBtn/LinkBtn";
-import { useOutletContext } from "react-router";
+import { Link, useOutletContext } from "react-router";
 
 export function Cart() {
   const { itemsToCart, setItemsToCart } = useOutletContext();
@@ -62,7 +61,9 @@ export function Cart() {
           </div>
           <h3>Your cart is empty</h3>
           <p>Start adding Products to your cart and they will appear here.</p>
-          <LinkBtn to="/shop">Shop Now</LinkBtn>
+          <Link to="/shop" className={styles.btn}>
+            Shop Now
+          </Link>
         </section>
       ) : (
         <section

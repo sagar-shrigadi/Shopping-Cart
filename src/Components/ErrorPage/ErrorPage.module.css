@@ -12,6 +12,9 @@
 
   h2 {
     font-size: 192px;
+    font-family: inherit;
+    color: inherit;
+    font-weight: 700;
     /* border: 1px solid; */
   }
   h3 {
@@ -30,4 +33,9 @@
   composes: btn from "../LinkBtn/LinkBtn.module.css";
   background: #000;
   color: #fff;
+  transition: color 150ms ease-out;
+}
+
+.btn:hover {
+  color: var(--action);
 }

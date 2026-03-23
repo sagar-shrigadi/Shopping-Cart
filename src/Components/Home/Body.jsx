@@ -5,7 +5,7 @@ export function Body() {
   return (
     <>
       <Hero />
-      <Category />
+      {/* <Category /> */}
     </>
   );
 }

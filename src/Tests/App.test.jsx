@@ -49,14 +49,14 @@ describe("App.jsx-Hero", () => {
   });
 });
 
-describe("App.jsx-Categories", () => {
-  it("Category h2 is present", () => {
-    render(<RouterProvider router={router} />);
-    const h2 = screen.getByRole("heading", { name: "Shop By Categories" });
+// describe("App.jsx-Categories", () => {
+//   it("Category h2 is present", () => {
+//     render(<RouterProvider router={router} />);
+//     const h2 = screen.getByRole("heading", { name: "Shop By Categories" });
 
-    expect(h2).toBeInTheDocument();
-  });
-});
+//     expect(h2).toBeInTheDocument();
+//   });
+// });
 
 describe("App.jsx-Footer", () => {
   it("All Links are present in top footer", () => {

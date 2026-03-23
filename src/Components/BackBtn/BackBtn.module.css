@@ -14,6 +14,7 @@
   composes: btn;
   background-color: transparent;
   padding: 0;
+  transition: all 100ms;
 
   svg {
     stroke: black;
@@ -22,6 +23,24 @@
   @media (prefers-color-scheme: dark) {
     svg {
       stroke: whitesmoke;
+    }
+  }
+}
+
+.back:hover {
+  color: brown;
+
+  svg {
+    stroke: brown;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .back:hover {
+    color: var(--action);
+
+    svg {
+      stroke: var(--action);
     }
   }
 }

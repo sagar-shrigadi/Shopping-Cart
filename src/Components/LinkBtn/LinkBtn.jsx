@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export function LinkBtn({ to, children }) {
   return (
-    <Link to={to} className={styles.btn}>
+    <Link to={to} className={styles.heroBtn}>
       {children}
     </Link>
   );

@@ -122,11 +122,30 @@
       button {
         cursor: pointer;
         background-color: var(--bg);
+        transition: background-color 200ms ease-out;
+      }
+      button:hover {
+        background-color: var(--action);
       }
       .remove {
-        background-color: var(--bg);
+        background-color: var(--action);
         margin-left: auto;
+        transition: background-color 150ms ease-out;
+      }
+      .remove:hover {
+        background-color: var(--bg);
       }
     }
   }
+}
+
+.btn {
+  composes: btn from "../LinkBtn/LinkBtn.module.css";
+  background-color: #f0f0f0;
+  color: black;
+  transition: background-color 100ms ease-out;
+}
+
+.btn:hover {
+  background-color: oklch(from var(--bg) 85% c h);
 }

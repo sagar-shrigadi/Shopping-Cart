@@ -10,8 +10,16 @@
   text-decoration: none;
   color: var(--text-h);
   background: none;
-  font-size: 1.75rem;
+  font-size: clamp(1.125rem, 0.9076rem + 1.087vw, 1.75rem);
   cursor: pointer;
+  transition: color 150ms;
+}
+
+.logo:hover {
+  color: brown;
+  @media (prefers-color-scheme: dark) {
+    color: var(--action);
+  }
 }
 
 .input {
@@ -20,9 +28,9 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-width: 40rem;
-  background-color: var(--bg25L);
-  border-radius: 0.875rem;
+  min-width: clamp(6.25rem, -5.4891rem + 58.6957vw, 40rem);
+  background-color: var(--input-bg);
+  border-radius: clamp(0.625rem, 0.538rem + 0.4348vw, 0.875rem);
   > input {
     border-radius: inherit;
     background-color: inherit;
@@ -30,13 +38,12 @@
     padding: 1.125rem 1rem;
     border: 0;
     font-size: 1.125rem;
-    color: aliceblue;
+    color: var(--text-h);
   }
   > input:focus-visible {
     outline: 0;
   }
   > .searchBtn {
-    --svg: aliceblue;
     position: absolute;
     right: 1rem;
     block-size: auto;
@@ -74,13 +81,14 @@
   position: relative;
 }
 
-.cart::before {
-  content: "";
+.cartCount {
+  font-weight: 600;
+  text-align: center;
   position: absolute;
-  background: red;
-  border-radius: 50%;
-  top: 2%;
-  right: -15%;
-  width: 12px;
-  aspect-ratio: 1;
+  background-color: var(--action);
+  color: black;
+  width: 35px;
+  border-radius: 1.5rem;
+  top: -6px;
+  left: 12px;
 }

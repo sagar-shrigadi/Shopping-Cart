@@ -1,10 +1,63 @@
+@property --gradient-angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .btn {
   padding: 1rem 4rem;
   font-size: 20px;
   border: 0;
   border-radius: 1rem;
   cursor: pointer;
-  background: #f0f0f0;
-  color: black;
+
   text-decoration: none;
+}
+
+.heroBtn {
+  composes: btn;
+  position: relative;
+  background: var(--bg);
+  color: var(--heroBtnText);
+  transition: color 0.15s;
+}
+
+.heroBtn:hover {
+  color: darkcyan;
+
+  @media (prefers-color-scheme: light) {
+    background-color: aliceblue;
+    color: teal;
+  }
+}
+
+.heroBtn::before,
+.heroBtn::after {
+  content: "";
+  position: absolute;
+  inset: -0.35rem -0.25rem;
+  z-index: -1;
+  background: conic-gradient(
+    from var(--gradient-angle),
+    var(--heroBtnGrad-1),
+    var(--heroBtnGrad-2),
+    var(--heroBtnGrad-3),
+    var(--heroBtnGrad-2),
+    var(--heroBtnGrad-1)
+  );
+  border-radius: inherit;
+  animation: rotation 20s linear infinite;
+}
+
+.heroBtn::after {
+  filter: blur(3.5rem);
+}
+
+@keyframes rotation {
+  0% {
+    --gradient-angle: 0deg;
+  }
+  100% {
+    --gradient-angle: 360deg;
+  }
 }

@@ -1,18 +1,16 @@
 :root {
-  --text: #6b6375;
-  --text-h: #08060d;
-  --bg: #fff;
+  --text: oklch(51.351% 0.02965 305.393);
+  --text-h: oklch(12.971% 0.01714 298.914);
+  --bg: oklch(100% 0.00011 271.152);
   --bg15L: oklch(from var(--bg) 15% c h);
   --bg25L: oklch(from var(--bg) 40% c h);
-  --svg: var(--bg25L);
-  --border: #e5e4e7;
-  --code-bg: #f4f3ec;
-  --accent: #aa3bff;
-  --accent-bg: rgba(170, 59, 255, 0.1);
-  --accent-border: rgba(170, 59, 255, 0.5);
-  --social-bg: rgba(244, 243, 236, 0.5);
-  --shadow:
-    rgba(0, 0, 0, 0.1) 0 10px 15px -3px, rgba(0, 0, 0, 0.05) 0 4px 6px -2px;
+  --input-bg: oklch(from var(--bg) 85% c h);
+  --svg: var(--text-h);
+  --heroBtnText: var(--bg25L);
+  --heroBtnGrad-1: oklch(37.864% 0.05894 203.349);
+  --heroBtnGrad-2: oklch(59.159% 0.09019 185.371);
+  --heroBtnGrad-3: oklch(55.554% 0.06634 134.213);
+  --action: oklch(74.917% 0.15121 235.273);
   --sans: system-ui, "Segoe UI", Roboto, sans-serif;
   --heading: system-ui, "Segoe UI", Roboto, sans-serif;
   --mono: ui-monospace, Consolas, monospace;
@@ -35,24 +33,14 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --text: #9ca3af;
-    --text-h: #f3f4f6;
-    --bg: #16171d;
+    --text: oklch(71.366% 0.01926 261.373);
+    --text-h: oklch(96.696% 0.00298 264.792);
+    --bg: oklch(20.628% 0.01201 277.829);
     --bg15L: oklch(from var(--bg) 15% c h);
     --bg25L: oklch(from var(--bg) 25% c h);
+    --input-bg: var(--bg25L);
     --svg: var(--text-h);
-    --border: #2e303a;
-    --code-bg: #1f2028;
-    --accent: #c084fc;
-    --accent-bg: rgba(192, 132, 252, 0.15);
-    --accent-border: rgba(192, 132, 252, 0.5);
-    --social-bg: rgba(47, 48, 58, 0.5);
-    --shadow:
-      rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
-  }
-
-  #social .button-icon {
-    filter: invert(1) brightness(2);
+    --heroBtnText: var(--text-h);
   }
 }
 #root {
