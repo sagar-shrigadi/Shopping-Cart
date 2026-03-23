@@ -2,15 +2,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid; */
-  padding: 1rem 2rem;
+  padding: 1rem clamp(1rem, 0.6522rem + 1.7391vw, 2rem);
+  gap: 1rem;
 }
 
 .logo {
   text-decoration: none;
   color: var(--text-h);
-  background: none;
-  font-size: clamp(1.125rem, 0.9076rem + 1.087vw, 1.75rem);
+  font-size: clamp(1rem, 0.7391rem + 1.3043vw, 1.75rem);
+  width: fit-content;
   cursor: pointer;
   transition: color 150ms;
 }
@@ -28,16 +28,17 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  min-width: clamp(6.25rem, -5.4891rem + 58.6957vw, 40rem);
+  width: clamp(16.25rem, -6.0156rem + 59.375vw, 40rem);
   background-color: var(--input-bg);
-  border-radius: clamp(0.625rem, 0.538rem + 0.4348vw, 0.875rem);
+  border-radius: 100vw;
   > input {
     border-radius: inherit;
     background-color: inherit;
-    min-width: 93.5%;
-    padding: 1.125rem 1rem;
+    min-width: 90%;
+    padding: clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem)
+      clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
     border: 0;
-    font-size: 1.125rem;
+    font-size: clamp(0.875rem, 0.788rem + 0.4348vw, 1.125rem);
     color: var(--text-h);
   }
   > input:focus-visible {
@@ -45,19 +46,35 @@
   }
   > .searchBtn {
     position: absolute;
-    right: 1rem;
+    right: clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem);
     block-size: auto;
     background: none;
     border: 0;
     cursor: pointer;
     padding: 0.5rem 0;
     > svg {
-      width: 1.75rem;
+      width: clamp(1.25rem, 1.0761rem + 0.8696vw, 1.75rem);
       aspect-ratio: 1;
       stroke: var(--svg);
     }
   }
 }
+
+@media (width < 600px) {
+  .input {
+    width: 37.5px;
+    transition: width 350ms ease-in-out;
+    &:focus-within {
+      position: absolute;
+      width: 18rem;
+      z-index: 10;
+    }
+    > input {
+      width: 0;
+    }
+  }
+}
+
 .nav {
   > ul {
     list-style: none;
@@ -65,13 +82,12 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    /* border: 1px solid; */
-    gap: 2rem;
+    gap: clamp(1rem, 0.4783rem + 2.6087vw, 2.5rem);
     > a {
       cursor: pointer;
     }
     svg {
-      width: 2rem;
+      width: clamp(1.25rem, 0.9891rem + 1.3043vw, 2rem);
       stroke: var(--svg);
     }
   }
@@ -87,7 +103,8 @@
   position: absolute;
   background-color: var(--action);
   color: black;
-  width: 35px;
+  width: clamp(1.5rem, 1.2609rem + 1.1957vw, 2.1875rem);
+  font-size: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
   border-radius: 1.5rem;
   top: -6px;
   left: 12px;

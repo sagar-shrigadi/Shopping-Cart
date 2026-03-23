@@ -33,13 +33,6 @@ export function Cart() {
         <BackBtn />
         <div className={styles.main}>
           <h2>Your Cart</h2>
-          {itemsToCart.length > 0 ? (
-            <strong>
-              <p>{itemsToCart.length} items</p>
-            </strong>
-          ) : (
-            ""
-          )}
         </div>
       </article>
       {itemsToCart.length === 0 ? (
@@ -94,8 +87,18 @@ export function Cart() {
                     value={item.qty}
                     data-testid="qtyInput"
                   />
-                  <button onClick={() => increaseItemQty(item.id)}>+</button>
-                  <button onClick={() => decreaseItemQty(item.id)}>-</button>
+                  <button
+                    className={styles.ctrl}
+                    onClick={() => increaseItemQty(item.id)}
+                  >
+                    +
+                  </button>
+                  <button
+                    className={styles.ctrl}
+                    onClick={() => decreaseItemQty(item.id)}
+                  >
+                    -
+                  </button>
                   <button
                     className={styles.remove}
                     onClick={() => removeFromCart(item.id)}

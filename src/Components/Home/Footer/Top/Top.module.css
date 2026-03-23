@@ -1,12 +1,14 @@
+.container {
+  container: top / inline-size;
+}
 .top {
   --max-width: 980px;
   width: min(var(--max-width), 100%);
   min-height: 250px;
-  padding: 1rem 2rem;
+  /* padding: 1rem 2rem; */
   display: flex;
   align-items: center;
   justify-content: space-around;
-  /* background-color: lch(from lch(0% 0 0) 20% c h); */
   background-color: var(--bg25L);
   margin-inline: auto;
 
@@ -14,7 +16,7 @@
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    font-size: 1.125rem;
+    font-size: clamp(1rem, 0.9565rem + 0.2174vw, 1.125rem);
 
     a {
       transition: color 150ms;
@@ -23,5 +25,14 @@
     a:hover {
       color: var(--action);
     }
+  }
+}
+
+@container top (width <= 600px) {
+  .top {
+    flex-direction: column;
+    align-items: start;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
   }
 }

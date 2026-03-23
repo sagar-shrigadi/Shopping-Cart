@@ -1,7 +1,8 @@
 .shop {
+  --max-width: 1536px;
   margin-inline: auto;
-  max-width: 80%;
-  margin-bottom: 7.5rem;
+  width: min(var(--max-width), 100%);
+  margin-bottom: clamp(5rem, 4.1304rem + 4.3478vw, 7.5rem);
   color: (--text);
 }
 
@@ -11,9 +12,10 @@
   display: grid;
   place-items: center;
   text-align: center;
+  padding-inline: 0.5rem;
 
   h2 {
-    font-size: 36px;
+    font-size: clamp(1.75rem, 1.5761rem + 0.8696vw, 2.25rem);
   }
 }
 .header {
@@ -21,37 +23,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: start;
-  gap: 2rem;
-  padding: 2.5rem 1rem;
-  /* border: 1px solid; */
-  /* color: black; */
+  gap: clamp(1.5rem, 1.3261rem + 0.8696vw, 2rem);
+  padding: 2.5rem clamp(0.5rem, 0.3261rem + 0.8696vw, 1rem);
 }
 
 .main {
-  /* border: 1px solid white; */
-  /* padding-inline: 1.5rem; */
   margin-bottom: 1rem;
   h2 {
-    font-size: 2.5rem;
+    font-size: clamp(1.75rem, 1.4891rem + 1.3043vw, 2.5rem);
     margin-bottom: 0.75rem;
-    letter-spacing: 0.25rem;
+    letter-spacing: 0.2ch;
   }
   p {
-    font-size: 1.25rem;
+    font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
     letter-spacing: 0.5ch;
   }
 }
 .controls {
-  /* width: 100%; */
-  /* border: 1px solid; */
   align-self: stretch;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* padding-inline: 1rem; */
 }
 .btn {
   composes: btn from "../BackBtn/BackBtn.module.css";
+  font-size: clamp(0.875rem, 0.7446rem + 0.6522vw, 1.25rem);
   --text: black;
   background-color: #f0f0f0;
   color: var(--text);
@@ -60,7 +56,7 @@
 
   svg {
     margin-right: 0.25rem;
-    width: 28px;
+    width: clamp(1.25rem, 1.0761rem + 0.8696vw, 1.75rem);
   }
 }
 
@@ -69,17 +65,17 @@
 }
 
 .content {
-  /* border: 1px solid; */
   padding: 3rem 1rem;
   margin-inline: auto;
-  /* margin-bottom: 5rem; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(325px, 100%), 1fr));
-  gap: 2rem;
-  justify-content: center;
+  gap: clamp(1.25rem, 0.9891rem + 1.3043vw, 2rem);
+  justify-items: center;
 
   .card {
     --text: whitesmoke;
+    --max-width: 400px;
+    width: min(var(--max-width), 100%);
     min-height: 25rem;
     padding: 1rem;
     display: flex;
@@ -87,7 +83,6 @@
     align-items: center;
     justify-content: center;
     gap: 1rem;
-    /* background-color: lch(from lch(12.25% 0 296.81) 25% c h); */
     background-color: var(--bg25L);
     color: var(--text);
     border-radius: 1.125rem;
@@ -95,7 +90,6 @@
     img {
       aspect-ratio: 1;
       object-fit: contain;
-      /* width: 100%; */
       background-position: center;
     }
 

@@ -3,8 +3,9 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
-  padding: 0.875rem 1.5rem;
-  font-size: 1.25rem;
+  padding: clamp(0.625rem, 0.538rem + 0.4348vw, 0.875rem)
+    clamp(1rem, 0.8261rem + 0.8696vw, 1.5rem);
+  font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
   cursor: pointer;
   text-decoration: none;
   border: 0;
@@ -18,7 +19,7 @@
 
   svg {
     stroke: black;
-    width: 28px;
+    width: clamp(1.25rem, 1.0761rem + 0.8696vw, 1.75rem);
   }
   @media (prefers-color-scheme: dark) {
     svg {

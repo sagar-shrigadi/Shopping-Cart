@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: 0 40px;
+  padding-inline: 2.5rem;
 }
 
 .content {
@@ -14,19 +14,15 @@
   align-items: center;
   justify-content: center;
   gap: 2rem;
-  padding: 3rem 2rem;
-  /* border: 1px solid; */
-  opacity: 1;
+  text-align: center;
   > h1 {
-    font-size: 88px;
+    font-size: clamp(2.25rem, 1.1196rem + 5.6522vw, 5.5rem);
     max-width: 20ch;
-    text-align: center;
   }
 
   > p {
     max-width: 70ch;
-    font-size: 20px;
+    font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
     margin-bottom: 1rem;
-    text-align: center;
   }
 }

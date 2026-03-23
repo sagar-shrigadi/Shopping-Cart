@@ -5,12 +5,12 @@
 }
 
 .btn {
-  padding: 1rem 4rem;
-  font-size: 20px;
+  padding: clamp(0.75rem, 0.663rem + 0.4348vw, 1rem)
+    clamp(2rem, 1.3043rem + 3.4783vw, 4rem);
+  font-size: clamp(1rem, 0.913rem + 0.4348vw, 1.25rem);
   border: 0;
-  border-radius: 1rem;
+  border-radius: clamp(0.625rem, 0.4946rem + 0.6522vw, 1rem);
   cursor: pointer;
-
   text-decoration: none;
 }
 
@@ -35,7 +35,7 @@
 .heroBtn::after {
   content: "";
   position: absolute;
-  inset: -0.35rem -0.25rem;
+  inset: clamp(-0.2813rem, -0.2573rem + 0.1196vw, -0.35rem);
   z-index: -1;
   background: conic-gradient(
     from var(--gradient-angle),
@@ -50,7 +50,7 @@
 }
 
 .heroBtn::after {
-  filter: blur(3.5rem);
+  filter: blur(clamp(2rem, 1.4783rem + 2.6087vw, 3.5rem));
 }
 
 @keyframes rotation {
